@@ -365,7 +365,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 48.1727}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &110115109
 MonoBehaviour:
@@ -1037,8 +1037,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.7894, y: -26.0355}
-  m_SizeDelta: {x: -271.5132, y: -52.071}
+  m_AnchoredPosition: {x: 9.366638, y: -32.43091}
+  m_SizeDelta: {x: -454.5788, y: -137.596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1150888427
 GameObject:
@@ -1075,8 +1075,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -27.684006}
-  m_SizeDelta: {x: -276.0042, y: -55.368}
+  m_AnchoredPosition: {x: 12, y: -33.748}
+  m_SizeDelta: {x: -464.4669, y: -138.4408}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150888429
 MonoBehaviour:
@@ -1578,7 +1578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245.78943, y: 127.66549}
+  m_AnchoredPosition: {x: 385, y: 176}
   m_SizeDelta: {x: 61.5985, y: 58.087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1523782410
@@ -1723,7 +1723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 243, y: 101.63}
+  m_AnchoredPosition: {x: 394, y: 144}
   m_SizeDelta: {x: 61.5985, y: 58.087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1570559642
@@ -2038,8 +2038,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: -25}
-  m_SizeDelta: {x: 499.3382, y: 228.5767}
+  m_AnchoredPosition: {x: 0.0000076294, y: -8}
+  m_SizeDelta: {x: 633.185, y: 257.6037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868273432
 MonoBehaviour:
@@ -2097,7 +2097,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 97690656
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2454,8 +2454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000063181, y: -9.8331}
-  m_SizeDelta: {x: 480.913, y: 231.293}
+  m_AnchoredPosition: {x: -0.000015259, y: 22}
+  m_SizeDelta: {x: 594.2055, y: 232.0433}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2004916427
 MonoBehaviour:
@@ -2477,18 +2477,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Di Chuy\u1EC3n Trong Qu\xE1n:\r\n- S\u1EED d\u1EE5ng c\xE1c ph\xEDm m\u0169i
-    t\xEAn (l\xEAn, xu\u1ED1ng, tr\xE1i, ph\u1EA3i) \u0111\u1EC3 di chuy\u1EC3n xung
-    quanh qu\xE1n c\xE0 ph\xEA.\r\n- D\xF9ng chu\u1ED9t \u0111\u1EC3 xoay g\xF3c
-    nh\xECn quanh qu\xE1n.\r\nT\u01B0\u01A1ng T\xE1c V\u1EDBi B\u1EA3ng Ch\u1ECDn
-    B\xE0i H\xE1t:\r\n- B\u1EA3ng ch\u1ECDn b\xE0i h\xE1t \u0111\xE3 c\xF3 s\u1EB5n
-    \u1EDF tr\u01B0\u1EDBc c\u1EEDa m\u1ED7i t\u1EA7ng ho\u1EB7c t\u1EA1i \u0111\xE0i
-    ngo\xE0i s\xE2n.\r\n- \u0110\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi b\u1EA3ng
-    ch\u1ECDn, ch\u1EC9 c\u1EA7n nh\u1EA5n n\xFAt Esc.\r\nCh\u1ECDn B\xE0i H\xE1t:\r\n-
-    Vu\u1ED1t chu\u1ED9t sang ph\u1EA3i \u0111\u1EC3 ch\u1ECDn b\xE0i h\xE1t m\xE0
-    b\u1EA1n mu\u1ED1n nghe.\r\n- Nh\u1EA5p chu\u1ED9t \u0111\u1EC3 x\xE1c nh\u1EADn
-    l\u1EF1a ch\u1ECDn c\u1EE7a b\u1EA1n.\r\n- Khi \u1EA5n Stop s\u1EBD d\u1EEBng
-    h\u1EBFt b\xE0i h\xE1t \u0111ang ch\u1EA1y\r\n"
+  m_text: "Di Chuy\u1EC3n Trong Qu\xE1n:\r\n- S\u1EED d\u1EE5ng c\xE1c ph\xEDm  (W,
+    S, A, D) \u0111\u1EC3 di chuy\u1EC3n xung quanh qu\xE1n c\xE0 ph\xEA.\r\n- D\xF9ng
+    chu\u1ED9t \u0111\u1EC3 xoay g\xF3c nh\xECn quanh qu\xE1n.\r\nT\u01B0\u01A1ng
+    T\xE1c V\u1EDBi B\u1EA3ng Ch\u1ECDn B\xE0i H\xE1t:\r\n- B\u1EA3ng ch\u1ECDn b\xE0i
+    h\xE1t \u0111\xE3 c\xF3 s\u1EB5n \u1EDF tr\u01B0\u1EDBc c\u1EEDa m\u1ED7i t\u1EA7ng
+    ho\u1EB7c t\u1EA1i \u0111\xE0i ngo\xE0i s\xE2n.\r\n- \u0110\u1EC3 t\u01B0\u01A1ng
+    t\xE1c v\u1EDBi b\u1EA3ng ch\u1ECDn, ch\u1EC9 c\u1EA7n nh\u1EA5n n\xFAt Esc.\r\nCh\u1ECDn
+    B\xE0i H\xE1t:\r\n- Vu\u1ED1t chu\u1ED9t sang ph\u1EA3i \u0111\u1EC3 ch\u1ECDn
+    b\xE0i h\xE1t m\xE0 b\u1EA1n mu\u1ED1n nghe.\r\n- Nh\u1EA5p chu\u1ED9t \u0111\u1EC3
+    x\xE1c nh\u1EADn l\u1EF1a ch\u1ECDn c\u1EE7a b\u1EA1n.\r\n- Khi \u1EA5n Stop
+    s\u1EBD d\u1EEBng h\u1EBFt b\xE0i h\xE1t \u0111ang ch\u1EA1y\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2510,7 +2509,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 97690656
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2522,7 +2521,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
