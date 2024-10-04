@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
+using UnityEngine.EventSystems;
 
 namespace StarterAssets
 {
@@ -73,6 +75,7 @@ namespace StarterAssets
 
         private bool _hasAnimator;
         private bool _isInteracting;
+        private bool _isCursorLocked = true;
 
         private bool IsCurrentDeviceMouse
         {
@@ -81,7 +84,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM
                 return _playerInput.currentControlScheme == "KeyboardMouse";
 #else
-				return false;
+                return false;
 #endif
             }
         }
@@ -104,7 +107,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM 
             _playerInput = GetComponent<PlayerInput>();
 #else
-			Debug.LogError("Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
+            Debug.LogError("Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
 
             AssignAnimationIDs();
@@ -119,19 +122,27 @@ namespace StarterAssets
         {
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
-                _isInteracting = !_isInteracting;
+                _isCursorLocked = !_isCursorLocked;
+                ToggleCursorLock();
             }
 
             _hasAnimator = TryGetComponent(out _animator);
 
             JumpAndGravity();
             GroundedCheck();
-            Move();
+
+            // Chỉ cho phép di chuyển nếu không tương tác với UI
+            if (_isCursorLocked && !IsPointerOverUIObject())
+            {
+                Move();
+                CameraRotation();
+            }
         }
 
         private void LateUpdate()
         {
-            if (!_isInteracting)
+            // Gọi camera rotation ở đây để xử lý các biến cuối cùng
+            if (_isCursorLocked)
             {
                 CameraRotation();
             }
@@ -148,10 +159,8 @@ namespace StarterAssets
 
         private void GroundedCheck()
         {
-            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
-                transform.position.z);
-            Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
-                QueryTriggerInteraction.Ignore);
+            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
+            Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
 
             if (_hasAnimator)
             {
@@ -161,7 +170,7 @@ namespace StarterAssets
 
         private void CameraRotation()
         {
-            if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
+            if (_input.look.sqrMagnitude >= _threshold && _isCursorLocked)
             {
                 float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
@@ -172,8 +181,7 @@ namespace StarterAssets
             _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
             _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
-                _cinemachineTargetYaw, 0.0f);
+            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride, _cinemachineTargetYaw, 0.0f);
         }
 
         private void Move()
@@ -187,11 +195,9 @@ namespace StarterAssets
             float speedOffset = 0.1f;
             float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
 
-            if (currentHorizontalSpeed < targetSpeed - speedOffset ||
-                currentHorizontalSpeed > targetSpeed + speedOffset)
+            if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
             {
-                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude,
-                    Time.deltaTime * SpeedChangeRate);
+                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
                 _speed = Mathf.Round(_speed * 1000f) / 1000f;
             }
             else
@@ -206,8 +212,7 @@ namespace StarterAssets
             if (_input.move != Vector2.zero)
             {
                 _targetRotation = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
-                float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
-                    RotationSmoothTime);
+                float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, RotationSmoothTime);
                 transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
             }
 
@@ -277,26 +282,53 @@ namespace StarterAssets
             }
         }
 
-        private static float ClampAngle(float angle, float min, float max)
-        {
-            if (angle < -360F) angle += 360F;
-            if (angle > 360F) angle -= 360F;
-            return Mathf.Clamp(angle, min, max);
-        }
-
-        // Phương thức để phát âm thanh bước chân
         private void OnFootstep()
         {
-            int footstepIndex = Random.Range(0, FootstepAudioClips.Length);
-            AudioSource.PlayClipAtPoint(FootstepAudioClips[footstepIndex], transform.position, FootstepAudioVolume);
+            // Chơi âm thanh bước chân
+            AudioClip clip = FootstepAudioClips[Random.Range(0, FootstepAudioClips.Length)];
+            AudioSource.PlayClipAtPoint(clip, transform.position, FootstepAudioVolume);
         }
 
-        // Phương thức để phát âm thanh khi hạ cánh
         private void OnLand()
         {
+            // Chơi âm thanh hạ cánh
             if (LandingAudioClip != null)
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.position);
+            }
+        }
+
+        private bool IsPointerOverUIObject()
+        {
+            // Kiểm tra nếu con trỏ chuột đang ở trên một đối tượng UI
+            PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current)
+            {
+                position = Input.mousePosition
+            };
+
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+            return results.Count > 0;
+        }
+
+        private static float ClampAngle(float angle, float min, float max)
+        {
+            if (angle < -360f) angle += 360f;
+            if (angle > 360f) angle -= 360f;
+            return Mathf.Clamp(angle, min, max);
+        }
+
+        private void ToggleCursorLock()
+        {
+            if (_isCursorLocked)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }

@@ -20,8 +20,4 @@ public class buttonOpen : MonoBehaviour
         }
 
     }
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
 }
