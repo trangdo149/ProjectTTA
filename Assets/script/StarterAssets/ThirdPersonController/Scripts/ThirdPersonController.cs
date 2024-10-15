@@ -15,7 +15,7 @@ namespace StarterAssets
         public float MoveSpeed = 2.0f;
         public float SprintSpeed = 5.335f;
         [Range(0.0f, 0.3f)]
-        public float RotationSmoothTime = 0.12f;
+        public float RotationSmoothTime = 1f;
         public float SpeedChangeRate = 10.0f;
 
         public AudioClip LandingAudioClip;
