@@ -761,16 +761,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896897560}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8078429, y: 2.1477172, z: 1.8078429}
+  m_LocalScale: {x: 1.3863828, y: 1.4575418, z: 1.3863828}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1799070610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 31}
+  m_AnchoredPosition: {x: 13.03674, y: 202}
   m_SizeDelta: {x: 925.577, y: 388.486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &896897562
@@ -793,17 +793,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Di Chuy\u1EC3n Trong Qu\xE1n:\r\n- S\u1EED d\u1EE5ng c\xE1c ph\xEDm  (W,
-    S, A, D) \u0111\u1EC3 di chuy\u1EC3n quanh qu\xE1n c\xE0 ph\xEA.\r\n- D\xF9ng
-    chu\u1ED9t \u0111\u1EC3 xoay g\xF3c nh\xECn quanh qu\xE1n.\r\nT\u01B0\u01A1ng
-    T\xE1c V\u1EDBi B\u1EA3ng Ch\u1ECDn B\xE0i H\xE1t:\r\n- B\u1EA3ng ch\u1ECDn b\xE0i
-    h\xE1t \u0111\xE3 c\xF3 s\u1EB5n \u1EDF tr\u01B0\u1EDBc c\u1EEDa m\u1ED7i t\u1EA7ng
-    ho\u1EB7c t\u1EA1i \u0111\xE0i ngo\xE0i s\xE2n.\r\n- \u0110\u1EC3 t\u01B0\u01A1ng
-    t\xE1c v\u1EDBi b\u1EA3ng ch\u1ECDn, ch\u1EC9 c\u1EA7n nh\u1EA5n n\xFAt Esc.\r\nCh\u1ECDn
-    B\xE0i H\xE1t:\r\n- Vu\u1ED1t chu\u1ED9t sang ph\u1EA3i \u0111\u1EC3 ch\u1ECDn
-    b\xE0i h\xE1t m\xE0 b\u1EA1n mu\u1ED1n nghe.\r\n- Nh\u1EA5p chu\u1ED9t \u0111\u1EC3
-    x\xE1c nh\u1EADn l\u1EF1a ch\u1ECDn c\u1EE7a b\u1EA1n.\r\n- Khi \u1EA5n Stop
-    s\u1EBD d\u1EEBng h\u1EBFt b\xE0i h\xE1t \u0111ang ch\u1EA1y\r\n"
+  m_text: "Di Chuy\u1EC3n Trong Qu\xE1n:\r\n   - S\u1EED d\u1EE5ng c\xE1c ph\xEDm 
+    (W, S, A, D) \u0111\u1EC3 di chuy\u1EC3n quanh qu\xE1n c\xE0 ph\xEA.\r\n   -
+    D\xF9ng chu\u1ED9t \u0111\u1EC3 xoay g\xF3c nh\xECn quanh qu\xE1n.\r\nT\u01B0\u01A1ng
+    T\xE1c V\u1EDBi B\u1EA3ng Ch\u1ECDn B\xE0i H\xE1t:\r\n   - Nh\u1EA5n Esc \u0111\u1EC3
+    t\u1EA1m d\u1EEBng di chuy\u1EC3n.\n   - \u0110\u1EC3 b\u1EA3ng ch\u1ECDn b\xE0i
+    h\xE1t xu\u1EA5t hi\u1EC7n, \u1EA5n v\xE0o bi\u1EC3u t\u01B0\u1EE3ng s\xF3ng
+    \xE2m tr\xEAn c\xE1i \u0111\xE0i (n\u1EBFu c\xF3).\nMap:\n   - C\xF3 nhi\u1EC1u
+    b\u1EA3ng ch\u1ECDn b\xE0i h\xE1t trong kh\xF4ng gian qu\xE1n, ch\u1ECDn 'Map'
+    \u1EDF g\xF3c ph\u1EA3i m\xE0n h\xECnh \u0111\u1EC3 xem c\xE1c khu v\u1EF1c ch\u1EE9a
+    b\u1EA3ng ch\u1ECDn.\nCh\u1ECDn B\xE0i H\xE1t:\r\n   - Vu\u1ED1t chu\u1ED9t sang
+    ph\u1EA3i \u0111\u1EC3 ch\u1ECDn b\xE0i h\xE1t m\xE0 b\u1EA1n mu\u1ED1n nghe.\r\n  
+    - Nh\u1EA5p chu\u1ED9t \u0111\u1EC3 x\xE1c nh\u1EADn l\u1EF1a ch\u1ECDn c\u1EE7a
+    b\u1EA1n.\r\n   - Mu\u1ED1n t\u1EA1m d\u1EEBng b\xE0i h\xE1t h\xE3y \u1EA5n n\xFAt
+    Pause \u1EDF g\xF3c ph\u1EA3i m\xE0n h\xECnh.\n(L\u01B0u \xFD: nh\u1EA5n Esc
+    \u0111\u1EC3 ti\u1EBFp t\u1EE5c di chuy\u1EC3n)\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -866,7 +870,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -268.30038}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1718,7 +1722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 468.943, y: 239.69365}
+  m_AnchoredPosition: {x: 675, y: 414}
   m_SizeDelta: {x: 160, y: 32.786}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1770510372
@@ -1855,7 +1859,7 @@ RectTransform:
   m_GameObject: {fileID: 1799070609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.48704, y: 0.48704, z: 0.48704}
+  m_LocalScale: {x: 0.70693004, y: 0.7988309, z: 0.70693004}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 896897561}
@@ -2581,7 +2585,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
